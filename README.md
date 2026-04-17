@@ -3,11 +3,13 @@
 
 ## Disclaimer
 
-This document provides an example procedure for importing, configuring, and using Windows 11 on **OCI** solely for informational and educational purposes. It demonstrates technical feasibility but does not constitute official guidance, endorsement, or support from Oracle Corporation or its affiliates.
+This document provides an example procedure for importing, configuring, and using **Windows 11 on OCI** solely for informational and educational purposes. It demonstrates technical feasibility but does not constitute official guidance, endorsement, or support from Oracle Corporation or its affiliates.
 
 ## No Official Support
 
 Oracle does not support running Windows 11 on OCI. This setup is unofficial, untested by Oracle, and may violate Microsoft's Windows licensing terms or OCI service policies. Any issues, including performance degradation, security vulnerabilities, data loss, or service disruptions, will not be addressed by Oracle support. Users must rely on community resources or their own troubleshooting.
+
+The only official and fully supported method for **running Windows 11 on OCI** is through [OCI Secure Desktop](https://docs.oracle.com/en-us/iaas/secure-desktops/home.htm)
 
 ## User Responsibility
 
@@ -30,7 +32,7 @@ Consult legal and IT experts if needed.
 
 This step-by-step guide demonstrates how to import, configure, and run Windows 11 on OCI using a virtual machine initially created on VMware Workstation. It covers every action from VM creation in VMware Workstation through to successful boot-up in OCI.
 
-##Scope of the Guide
+## Scope of the Guide
 
 The procedure starts with setting up a new VM in VMware Workstation Pro/Player, including hardware configuration (CPU, RAM, disk, network), OS installation, Windows 11 activation, driver installation, and preparation for export. It then details the VMDK export, upload to OCI Object Storage, import as a custom image, instance launch, setup and final boot with RDP access.
 
@@ -63,7 +65,9 @@ Each step includes screenshots and commands.
 
 ![12](./.images/12.png)
 
-### USE SINGLE FILE: MANDATORY TO IMPORT CUSTOM IMAGE
+### USING A SINGLE FILE IS MANDATORY TO IMPORT A CUSTOM IMAGE
+
+MAX SIZE : **400GB**
 
 ![13](./.images/13.png)
 
@@ -233,9 +237,10 @@ IF THE VIRTUAL MACHINE HAS BEEN CREATED WITHOUT SECURE BOOT:
 ![59](./.images/59.png)
 
 ### YOU CAN INCREASE THE BOOT VOLUME SIZE (OPTIONAL)
+
 ![60](./.images/60.png)
 
-### CHANGE INSTANCE LICENSE TYPE
+### CHANGE INSTANCE LICENSE TYPE
 
 - TYPE: ***BRING YOUR OWN LICENSE***
 
@@ -243,7 +248,8 @@ IF THE VIRTUAL MACHINE HAS BEEN CREATED WITHOUT SECURE BOOT:
 
 ![62](./.images/62.png)
 
-### CHECK INSTANCE METADATA
+### CHECK INSTANCE METADATA
+
 
 ```
 curl -H "Authorization: Bearer Oracle" -L http://169.254.169.254/opc/v2/instance/
@@ -278,10 +284,10 @@ delete partition override
 
 ### INSTALL ORACLE CLOUD AGENT (OPTIONAL)
 
-(Manually install Oracle Cloud Agent on a Windows instance)[https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/manage-plugins.htm#install-agent]
+[Contact Oracle Support to manually install Oracle Cloud Agent on a Windows instance](https://docs.oracle.com/en-us/iaas/Content/Compute/Tasks/manage-plugins.htm#install-agent)
 
 ![69](./.images/69.png)
 
-### CHECK COMPUTE INSTANCE METRICS (OPTIONAL)
+### CHECK COMPUTE INSTANCE METRICS ARE COLLECTED (OPTIONAL)
 
 ![99](./.images/99.png)
