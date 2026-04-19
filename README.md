@@ -27,6 +27,12 @@ Consult legal and IT experts if needed.
 
 ***This example is provided "as is" without guarantees of functionality or future compatibility. Changes in OCI, Windows updates, or hardware emulation may render it obsolete. Proceed with caution.***
 
+## Known limitation
+
+Secure Boot is not supported at this time.
+The imported VMDK must be configured **without Secure Boot**, and the OCI compute instance must be launched without Secure Boot disabled.
+
+Once this feature has been successfully tested and validated, this guide will be updated accordingly.
 
 ## Introduction to the Procedure
 
