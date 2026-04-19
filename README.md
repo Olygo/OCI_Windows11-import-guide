@@ -30,7 +30,7 @@ Consult legal and IT experts if needed.
 ## Known limitation
 
 Secure Boot is not supported at this time.
-The imported VMDK must be configured **without Secure Boot**, and the OCI compute instance must be launched without Secure Boot disabled.
+The imported VMDK must be configured **without Secure Boot**, and the OCI compute instance must be launched without Secure Boot enabled.
 
 Once this feature has been successfully tested and validated, this guide will be updated accordingly.
 
