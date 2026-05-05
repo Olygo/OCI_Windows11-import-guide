@@ -29,10 +29,21 @@ Consult legal and IT experts if needed.
 
 ## Known limitation
 
-Secure Boot is not supported at this time.
-The imported VMDK must be configured **without Secure Boot**, and the OCI compute instance must be launched without Secure Boot enabled.
+### Import VM from Vmware Workstation
+- Secure Boot is not supported.
+- The imported VMDK must be configured **without Secure Boot**, 
+- The OCI compute instance must be launched without Secure Boot enabled.
 
-Once this feature has been successfully tested and validated, this guide will be updated accordingly.
+### Import VM from Oracle Virtual Box
+- Allow to import a VM with Secure Boot enabled
+- The OCI compute instance can be launched with Secure Boot enabled.
+
+### Import VM from Vmware ESX
+- Not tested
+
+### Import VM from Hyper-V
+- Not tested
+
 
 ## Introduction to the Procedure
 
